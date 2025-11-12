@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alterar Senha - Livraria Orsow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primaria: #3b2f2f;      /* tom de marrom elegante, remetendo a couro de capa de livro */
+      --secundaria: #f3e9dc;    /* bege suave, de papel antigo */
+      --botao: #6a4e23;         /* marrom-dourado */
+      --botao-hover: #8b5e34;
+      --texto: #1c1c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--secundaria);
+      color: var(--texto);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('imagens/bg-books.jpg');
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      padding: 40px 50px;
+      text-align: center;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    h1 {
+      color: var(--primaria);
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="password"] {
+    padding: 12px;
+    border: 2px solid var(--primaria);
+    border-radius: 8px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    }
+
+    input[type="password"]:focus {
+    border-color: var(--botao-hover);
+    }
+
+    button {
+    background-color: var(--botao);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+
+    button:hover {
+    background-color: var(--botao-hover);
+    }
+
+    .voltar {
+    display: block;
+    margin-top: 15px;
+    color: var(--primaria);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    }
+
+    .voltar:hover {
+    color: var(--botao-hover);
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Alterar Senha 🔒</h1>
+    <form action="alterasenha.php" method="post">
+    <input type="password" name="senha" placeholder="Digite a nova senha" required>
+    <button type="submit">Alterar</button>
+    </form>
+    <a href="index.php" class="voltar">🏠 Voltar à página inicial</a>
+</div>
+</body>
+</html>

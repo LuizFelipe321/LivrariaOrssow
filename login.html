@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Livraria Orsow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primaria: #3b2f2f;
+      --secundaria: #f3e9dc;
+      --botao: #6a4e23;
+      --botao-hover: #8b5e34;
+      --texto: #1c1c1c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: var(--secundaria);
+      color: var(--texto);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url('imagens/bg-books.jpg');
+      background-size: cover;
+      background-position: center;
+      backdrop-filter: blur(5px);
+    }
+
+    .container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      padding: 40px 50px;
+      width: 400px;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      color: var(--primaria);
+      margin-bottom: 25px;
+      font-size: 1.8rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      padding: 12px;
+      border: 2px solid var(--primaria);
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      background-color: #fffaf3;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: var(--botao-hover);
+    }
+
+    .lembrar {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      font-size: 0.95rem;
+    }
+
+    button {
+      background-color: var(--botao);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: var(--botao-hover);
+    }
+
+    .links {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--primaria);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: var(--botao-hover);
+    }
+
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <h2>Acesse sua conta 🔑</h2>
+    <form action="login.php" method="post">
+      <input type="email" name="email" placeholder="E-mail" required>
+      <input type="password" name="senha" placeholder="Senha" required>
+      
+      <label class="lembrar">
+        <input type="checkbox" name="lembrar" value="1"> Lembrar meu e-mail
+      </label>
+
+      <button type="submit">Acessar</button>
+    </form>
+
+    <div class="links">
+      <a href="alterasenha.html">Esqueceu a senha?</a>
+      <a href="index.html">Criar nova conta</a>
+      <a href="index.php">🏠 Voltar à página inicial</a>
+    </div>
+  </div>
+</body>
+</html>
